@@ -5,6 +5,7 @@ strict graph {
     labelloc="t"
     layout="circo"
     oneblock=true
+    fontname="AR PL UKai"
     
 CC -- 朗朗
 CC -- 虫虫
