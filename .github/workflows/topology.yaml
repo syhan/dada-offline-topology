@@ -10,17 +10,17 @@ jobs:
   topology:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Install GraphViz
-      run: apt install graphviz -y
+    steps:
+      - name: Install GraphViz
+        run: apt install graphviz -y
 
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Generate Topology
-      run: ./export.sh
+      - name: Generate Topology
+        run: ./export.sh
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: topology.jpg
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: topology.jpg
 
