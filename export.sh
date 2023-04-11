@@ -39,6 +39,7 @@ strict graph {
     labelloc="t"
     layout="circo"
     oneblock=true
+    fontname="AR PL UKai"
     
 `cat topology.csv | sort | uniq  | sed -r 's/,/ -- /g'`
 
