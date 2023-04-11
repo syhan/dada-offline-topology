@@ -33,6 +33,8 @@ sed -i $SED_PLACEHOLDER '/null,null/d' topology.csv
 sed -i $SED_PLACEHOLDER '/,null/d' topology.csv
 sed -i $SED_PLACEHOLDER '/,$/d' topology.csv
 
+cat topology.csv | sort | uniq > topology.csv
+
 echo -n | tee topology.dot << EOF
 
 strict graph {
@@ -42,7 +44,7 @@ strict graph {
     layout="circo"
     oneblock=true
     
-`cat topology.csv | sort | uniq | sed -r 's/,/ -- /g'`
+`cat topology.csv | sed -r 's/,/ -- /g'`
 
 }
 

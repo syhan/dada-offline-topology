@@ -10,6 +10,9 @@ jobs:
   topology:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Install GraphViz
         run: sudo apt install graphviz -y
@@ -19,10 +22,5 @@ jobs:
       - name: Generate Topology
         run: ./export.sh
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            topology.jpg
-            topology.csv
+      - uses: stefanzweifel/git-auto-commit-action@v4
 
