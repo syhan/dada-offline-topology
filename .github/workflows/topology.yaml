@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Install GraphViz
-        run: apt install graphviz -y
+        run: sudo apt install graphviz -y
 
       - uses: actions/checkout@v3
 
