@@ -14,8 +14,8 @@ jobs:
       contents: write
 
     steps:
-      - name: Install GraphViz
-        run: sudo apt install graphviz -y
+      - name: Install GraphViz and Chinese Fonts
+        run: sudo apt install graphviz fonts-moe-standard-kai -y
 
       - uses: actions/checkout@v3
 
