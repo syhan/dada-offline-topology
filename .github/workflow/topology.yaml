@@ -1,0 +1,26 @@
+name: Topology
+
+on:
+  schedule:
+  - cron: "0 16 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  topology:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Install GraphViz
+      run: apt install graphviz -y
+
+    - uses: actions/checkout@v3
+
+    - name: Generate Topology
+      run: ./export.sh
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: topology.jpg
+

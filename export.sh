@@ -41,9 +41,8 @@ strict graph {
     labelloc="t"
     layout="circo"
     oneblock=true
-
     
-    `cat topology.csv | sed -r 's/,/ -- /g'`
+`cat topology.csv | sort | sed -r 's/,/ -- /g'`
 
 }
 
