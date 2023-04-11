@@ -42,7 +42,7 @@ strict graph {
     layout="circo"
     oneblock=true
     
-`cat topology.csv | sort | sed -r 's/,/ -- /g'`
+`cat topology.csv | sort | uniq | sed -r 's/,/ -- /g'`
 
 }
 
@@ -51,6 +51,6 @@ EOF
 
 dot -Tjpg topology.dot -o topology.jpg
 
-rm doc.json full.json sheet.json *.bak
+rm doc.json full.json sheet.json *.bak | true
 
 
