@@ -20,7 +20,7 @@ Rev=`jq -r '.clientVars.collab_client_vars.rev' doc.json`
 
 curl -X GET -H "Referer: https://docs.qq.com/sheet/DT2Nta3ZCaW9xc2Rv?tab=BB08J2" -H "Authority: docs.qq.com" -H "Accept: */*" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"  "https://docs.qq.com/dop-api/get/sheet?tab=BB08J2&padId=$GlobalPadId&subId=BB08J2&outformat=1&startrow=0&endrow=$MaxRow&normal=1&preview_token=&nowb=1&rev=$Rev" > full.json
 
-jq '.data.initialAttributedText.text[0][2][0].c[1]' full.json > sheet.json
+jq '.data.initialAttributedText.text[0][3][0].c[1]' full.json > sheet.json
 
 for i in `seq 1 $MaxRow`;
 do
